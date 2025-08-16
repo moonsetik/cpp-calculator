@@ -2,4 +2,5 @@
 
 int main() {
 	RunCalculatorCycle();
+	return 0;
 }

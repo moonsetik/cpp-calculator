@@ -3,77 +3,74 @@
 #include <string>
 #include <cmath>
 
-using Number = double;
 
 bool ReadNumber(Number& result) {
     std::cin >> result;
     if (!std::cin.fail()) {
         return true;
     }
-    else {
-        std::cerr << "Error: Numeric operand expected" << std::endl;
-        return false;
-    }
+    std::cerr << "Error: Numeric operand expected" << std::endl;
+    return false;
 }
 
 bool RunCalculatorCycle() {
-    Number result;
-    Number add_num;
     Number memmory;
-    std::string operation;
     bool was_error = false;
     bool memmory_empty = true;
+    Number result;
     was_error = ReadNumber(result);
     if (!was_error) {
         return 0;
     }
     else {
+        std::string operation;
         std::cin >> operation;
+        Number additional_number;
         while (operation != "q") {
             if (operation == "=") {
                 std::cout << result << std::endl;
             }
             else if (operation == "+") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result += add_num;
+                result += additional_number;
             }
             else if (operation == "-") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result -= add_num;
+                result -= additional_number;
             }
             else if (operation == "*") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result *= add_num;
+                result *= additional_number;
             }
             else if (operation == "/") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result /= add_num;
+                result /= additional_number;
             }
             else if (operation == "**") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result = pow(result, add_num);
+                result = pow(result, additional_number);
             }
             else if (operation == ":") {
-                was_error = ReadNumber(add_num);
+                was_error = ReadNumber(additional_number);
                 if (!was_error) {
                     break;
                 }
-                result = add_num;
+                result = additional_number;
             }
             else if (operation == "c") {
                 result = 0;
