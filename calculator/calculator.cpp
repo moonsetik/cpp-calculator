@@ -14,7 +14,7 @@ bool ReadNumber(Number& result) {
 }
 
 bool RunCalculatorCycle() {
-    Number memmory;
+    Number memmory = 0;
     bool was_error = false;
     bool memmory_empty = true;
     Number result;
