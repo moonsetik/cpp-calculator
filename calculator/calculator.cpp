@@ -17,7 +17,7 @@ bool RunCalculatorCycle() {
     Number memmory = 0;
     bool was_error = false;
     bool memmory_empty = true;
-    Number result;
+    Number result = 0;
     was_error = ReadNumber(result);
     if (!was_error) {
         return 0;
@@ -25,7 +25,7 @@ bool RunCalculatorCycle() {
     else {
         std::string operation;
         std::cin >> operation;
-        Number additional_number;
+        Number additional_number = 0;
         while (operation != "q") {
             if (operation == "=") {
                 std::cout << result << std::endl;
